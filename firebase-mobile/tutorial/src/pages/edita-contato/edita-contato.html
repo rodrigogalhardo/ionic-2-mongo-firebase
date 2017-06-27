@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edição</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="fechar()">
+         <ion-icon name="close"></ion-icon>
+      </button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Nome:</ion-label>
+      <ion-input type="text" [(ngModel)]="contato.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Email:</ion-label>
+      <ion-input type="text" [(ngModel)]="contato.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Telefone:</ion-label>
+      <ion-input type="text" [(ngModel)]="contato.telefone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>CPF:</ion-label>
+      <ion-input type="text" [(ngModel)]="contato.cpf"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="salvar()">Salvar</button>
+      <button ion-button (click)="excluir(contato.$key)">
+        Excluir
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

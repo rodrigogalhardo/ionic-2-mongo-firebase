@@ -33,9 +33,6 @@ export class ContatosProvider {
   }
 
   getContatosById(id: string): Promise<any> {
-    if (this.data) {
-      return Promise.resolve(this.data);
-    }
 
     return new Promise(resolve => {
       this.http.get(this.uri + "/contato/" + id).map(res => res.json())

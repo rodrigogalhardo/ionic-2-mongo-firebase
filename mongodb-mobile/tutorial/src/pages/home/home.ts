@@ -44,7 +44,7 @@ export class HomePage implements OnInit {
   }
 
   editarContato(contato): void {
-    let modal = this.modalController.create(EditContactPage, {id: contato._id});
+    let modal = this.modalController.create(EditContactPage, {contato: contato});
     modal.present();
   }
 

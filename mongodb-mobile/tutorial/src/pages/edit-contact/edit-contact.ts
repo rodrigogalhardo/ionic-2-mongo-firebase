@@ -27,15 +27,13 @@ export class EditContactPage implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.navParams.get('id');
-    this.contatoService.getContatosById(this.id).then((resp)=>{
-      this.contato = resp;
-    });
+    this.contato = this.navParams.get('contato');
+    this.id = this.contato._id;
   }
 
 
   save(id: string, contato: Contato): void {
-    this.contatoService.updateContato(id, contato);
+    this.contatoService.updateContato(this.id, contato);
     this.viewCtrl.dismiss(contato);
   }
 

@@ -15,7 +15,7 @@ module.exports = ({
 		const Contato = require('../model/contato');
 		const query = {_id: req.params.id};
 		const model = req.body;
-		Contato.update(query, mod)
+		Contato.update(query, model)
 		.then(contato => res.status(200).json(contato))
 		.catch(err => res.status(400).json(err));
 	},
